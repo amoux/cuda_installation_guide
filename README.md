@@ -1,6 +1,12 @@
-# cuda_installation_guide
+# cuda installation guide (ubuntu)
 
 > This installation guide was put together after various failed installation attempts. I have used this same guide on multiple `Linux` machines e.g., servers, laptops, and desktops.
+
+* tested on ubuntu versions:
+
+- Ubuntu 18.04.3
+- Ubuntu 18.10
+- Ubuntu 19.04 (gcc/g++ 8 versions worked with cuda 10)
 
 * configure and select the nvidia driver for cuda. check your version here: [cuda-compatibility-index](https://docs.nvidia.com/deploy/cuda-compatibility/index.html).
 
