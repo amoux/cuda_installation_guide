@@ -90,8 +90,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
 * apply changes:
 
 ```bash
-source ~/.bashrc 
+source ~/.bashrc
 ```
+
+### CUDNN INSTALLATION
 
 * unzip cudnn package
 
