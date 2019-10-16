@@ -2,14 +2,9 @@
 
 > This installation guide was put together after various failed installation attempts. I have used this same guide on multiple `Linux` machines e.g., servers, laptops, and desktops.
 
-* nvidia-detector 
-* dpkg -s gcc 
+* configure and select the nvidia driver for cuda. check your version here: [cuda-compatibility-index](https://docs.nvidia.com/deploy/cuda-compatibility/index.html).
 
-## configure and select the nvidia driver for CUDA == (TOOLKIT-VERSION(DRIVER-VERSION))
-
-* CUDA Toolkit and Compatible Driver Versions:
-
-- CUDA-Toolkit-Version    Linux-x86_64-Driver-Version
+- cuda-toolkit-version    linux-x86_64-driver-version
   
   - CUDA 10.1 (10.1.105)	>= 418.39
   - CUDA 10.0 (10.0.130)	>= 410.48
@@ -42,15 +37,15 @@ sudo apt update && sudo apt build-essential
 sudo apt update && sudo apt install freeglut3 freeglut3-dev libxi-dev libxmu-dev
 ```
 
-# INSTALL CUDA WITH RUN FILE
+## installing cuda via run-file
 
 > **NOTE:** don't install the nvidia driver from the cuda package. make sure you have the compatible graphics driver installed before installing cuda. In this case we have `nvidia-driver-410` installed and running for `cuda-10`.
 
-- **optional** if installation fails due to `gcc version`:
+**optional** if installation fails due to `gcc version`:
 
-  - if installation failed then, the add the parameter `--override`.
-  - this happens if you had a previous cuda gcc version installed.
-  - we will properly take care of this after installing cuda, cudnn and configuring bashrc.
+- if installation failed then, the add the parameter `--override`. this happens if you had a **previous cuda gcc version** installed.
+
+* we will properly take care of this after installing cuda, cudnn and configuring bashrc.
   
 ```bash 
 sudo sh ./cuda_10.0.130_410.48_linux.run --override
@@ -77,13 +72,13 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
 source ~/.bashrc 
 ```
 
-* UNZIP CUDNN PACKAGE 
+* unzip cudnn package
 
 ```bash
 tar -xzvf cudnn-10.0-linux-x64-v7.5.0.56.tgz cuda/
 ```
 
-* COPY CUDNN FILES TO INCLUDE AND LIB64
+* copy cudnn files to the `include/` and `lib64/` directories:
 
 ```bash
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
@@ -91,9 +86,9 @@ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ```
 
-* LINK COMPATIBLE GCC & G++ VERSION WITH CUDA 10:
+* link compatible `gcc` and `g++` version with cuda 10:
 
-> **NOTE**: check which gcc/g++ versions you have installed first:
+> **NOTE**: check which gcc and g++ versions you have installed first:
 
 ```bash
 cd /usr/bin/
@@ -116,26 +111,28 @@ sudo ln -s /usr/bin/g++-7 /usr/local/cuda/bin/g++
 gcc --version
 ```
 
-* CHECK NVIDIA INSTALLED
+## check cuda installation
 
 ```
 nvcc --version
 ```
 
-* INSTALL CUDA 10 SAMPLES
+* install cuda 10 samples:
 
 ```bash
 cd NVIDIA_CUDA-10_Samples/
 make
 ```
 
-* RUN DEMOS
+* run the demos:
 
 ```
 cd bin/x86_64/linux/release/
 ./deviceQuery
 ./smokeParticles 
 ```
+
+> if you could run the demos with no issues then cuda is installed in your system.
 
 ## IF YOU NEED TO UNINSTALL CUDA:
 
@@ -167,5 +164,3 @@ ls
 rm -r cuda-10
 rm -r cuda
 ```
-
-CUDA INSTALLATION DONE.
