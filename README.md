@@ -11,7 +11,9 @@
   - CUDA 9.2 (9.2.88)		  >= 396.26
   - CUDA 9.1 (9.1.85)		  >= 390.46
   - CUDA 9.0 (9.0.76)		  >= 384.81
-  
+
+* download the cuda toolkit https://developer.nvidia.com/cuda-toolkit-archive
+
 * install the nvidia drivers from the following package:
 
 ```bash
