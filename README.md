@@ -12,14 +12,14 @@
   - CUDA 9.1 (9.1.85)		  >= 390.46
   - CUDA 9.0 (9.0.76)		  >= 384.81
 
-### downloads
+### CUDA DOWNLOADS
 
 - [cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
 
 - [cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
 
 
-### graphics driver installation:
+### GRAPHICS-DRIVER INSTALLATION:
 
 * install the nvidia drivers from the following package:
 
