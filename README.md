@@ -64,15 +64,12 @@ sudo apt update && sudo apt install freeglut3 freeglut3-dev libxi-dev libxmu-dev
 
 > **NOTE:** don't install the nvidia driver from the cuda package. make sure you have the compatible graphics driver installed before installing cuda. In this case we have `nvidia-driver-410` installed and running for `cuda-10`.
 
-**if installation fails due to `gcc version`**
-
-* if installation failed then, the add the parameter `--override`. this happens if you had a **previous cuda gcc version** installed. (we will properly take care of this after installing cuda, cudnn and configuring bashrc).
-  
-```bash 
-sudo sh ./cuda_10.0.130_410.48_linux.run --override
+```bash
 sudo sh ./cuda_10.0.130_410.48_linux.run
 ```
 
+> if installation failed due to `gcc version`**: add the parameter `--override`. this happens if you had a **previous cuda gcc version** installed. (we will properly take care of this after installing cuda, cudnn and configuring bashrc).
+  
 * configure enviroment path variables:
 
 ```bash
