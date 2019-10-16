@@ -12,7 +12,14 @@
   - CUDA 9.1 (9.1.85)		  >= 390.46
   - CUDA 9.0 (9.0.76)		  >= 384.81
 
-* download the cuda toolkit https://developer.nvidia.com/cuda-toolkit-archive
+### downloads
+
+- [cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
+
+- [cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
+
+
+### graphics driver installation:
 
 * install the nvidia drivers from the following package:
 
@@ -43,6 +50,8 @@ sudo apt install gcc-7 g++-7
 sudo apt update && sudo apt upgrade
 ```
 
+### CUDA INSTALLATION:
+
 * install dependancies:
 
 ```bash
@@ -51,15 +60,13 @@ sudo apt update && sudo apt build-essential
 sudo apt update && sudo apt install freeglut3 freeglut3-dev libxi-dev libxmu-dev
 ```
 
-## installing cuda via run-file
+* installing cuda via run-file
 
 > **NOTE:** don't install the nvidia driver from the cuda package. make sure you have the compatible graphics driver installed before installing cuda. In this case we have `nvidia-driver-410` installed and running for `cuda-10`.
 
-**optional** if installation fails due to `gcc version`:
+**if installation fails due to `gcc version`**
 
-- if installation failed then, the add the parameter `--override`. this happens if you had a **previous cuda gcc version** installed.
-
-* we will properly take care of this after installing cuda, cudnn and configuring bashrc.
+* if installation failed then, the add the parameter `--override`. this happens if you had a **previous cuda gcc version** installed. (we will properly take care of this after installing cuda, cudnn and configuring bashrc).
   
 ```bash 
 sudo sh ./cuda_10.0.130_410.48_linux.run --override
@@ -125,7 +132,7 @@ sudo ln -s /usr/bin/g++-7 /usr/local/cuda/bin/g++
 gcc --version
 ```
 
-## check cuda installation
+## CHECKING CUDA INSTALLATION
 
 ```
 nvcc --version
@@ -146,9 +153,9 @@ cd bin/x86_64/linux/release/
 ./smokeParticles 
 ```
 
-> if you could run the demos with no issues then cuda is installed in your system.
+if you could run the demos with no issues then cuda is installed in your system.
 
-## IF YOU NEED TO UNINSTALL CUDA:
+## UNINSTALLING CUDA-TOOLKIT:
 
 > you just need to run uninstall_cuda_< CUDA-VERSION >.pl to remove cuda completely from your system.
 
