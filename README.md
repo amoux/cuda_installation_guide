@@ -24,6 +24,7 @@ sudo apt upgrade
 
 ```bash
 ubuntu-drivers list
+```
 
 * install the driver-version based on your cuda-toolkit-version:
 
