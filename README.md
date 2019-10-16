@@ -11,12 +11,23 @@
   - CUDA 9.2 (9.2.88)		  >= 396.26
   - CUDA 9.1 (9.1.85)		  >= 390.46
   - CUDA 9.0 (9.0.76)		  >= 384.81
+  
+* install the nvidia drivers from the following package:
 
 ```bash
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
 sudo apt upgrade
+```
+
+* check the available drivers for your machine:
+
+```bash
 ubuntu-drivers list
+
+* install the driver-version based on your cuda-toolkit-version:
+
+```bash
 sudo apt install nvidia-driver-410
 ```
 
