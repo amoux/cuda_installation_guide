@@ -8,7 +8,7 @@
 - Ubuntu 18.10
 - Ubuntu 19.04 (gcc/g++ 8 versions worked with cuda 10)
 
-* configure and select the nvidia driver for cuda. check your version here: [cuda-compatibility-index](https://docs.nvidia.com/deploy/cuda-compatibility/index.html).
+> configure and select the nvidia driver for cuda. check your version here: [cuda-compatibility-index](https://docs.nvidia.com/deploy/cuda-compatibility/index.html).
 
 - cuda-toolkit-version    linux-x86_64-driver-version
   
