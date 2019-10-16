@@ -68,7 +68,7 @@ sudo apt update && sudo apt install freeglut3 freeglut3-dev libxi-dev libxmu-dev
 sudo sh ./cuda_10.0.130_410.48_linux.run
 ```
 
-> if installation **failed** due to `gcc version`: add the parameter `--override`. this happens if you had a **previous cuda gcc version** installed. (we will properly take care of this after installing cuda, cudnn and configuring bashrc).
+> **NOTE:** if the installation **failed** due to the `gcc version`: add the parameter `--override`, and run `sudo sh ./cuda_10.0.130_410.48_linux.run` instead. this happens if you had a **previous cuda gcc version** installed. (we will properly take care of this after installing cuda, cudnn and configuring bashrc).
   
 * configure enviroment path variables:
 
