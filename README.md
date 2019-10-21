@@ -191,3 +191,47 @@ ls
 rm -r cuda-10
 rm -r cuda
 ```
+
+
+## common issues/errors
+
+[solution source](https://askubuntu.com/questions/1025928/why-do-i-get-sbin-ldconfig-real-usr-local-cuda-lib64-libcudnn-so-7-is-not-a)
+
+* error
+
+```bash
+/ldconfig.real: /usr/local/cuda/lib64/libcudnn.so.7 is not a symbolic link
+```
+
+* solution
+
+```bash
+$ ls -lha libcudnn*
+...
+-rwxr-xr-x 1 root root 410M Oct 15 23:09 libcudnn.so.7
+-rwxr-xr-x 1 root root 410M Oct 15 23:09 libcudnn.so.7.6.3
+-rw-r--r-- 1 root root 387M Oct 15 23:09 libcudnn_static.a
+```
+
+* run the following in order (as stated in the solution source)
+
+```bash
+$ sudo rm libcudnn.so.7
+$ sudo ln libcudnn.so.7.6.3 libcudnn.so.7
+$ sudo ln libcudnn.so.7 libcudnn.so
+$ ls -lha libcudnn*
+...
+-rwxr-xr-x 3 root root 410M Oct 15 23:09 libcudnn.so
+-rwxr-xr-x 3 root root 410M Oct 15 23:09 libcudnn.so.7
+-rwxr-xr-x 3 root root 410M Oct 15 23:09 libcudnn.so.7.6.3
+-rw-r--r-- 1 root root 387M Oct 15 23:09 libcudnn_static.a
+```
+
+* lastly apply the changes
+
+```bash
+$ sudo ldconfig
+```
+
+
+
