@@ -205,6 +205,8 @@ rm -r cuda
 
 * solution
 
+  - inside `/usr/local/cuda/lib64` run the following command:
+
 ```bash
 $ ls -lha libcudnn*
 ...
@@ -216,6 +218,7 @@ $ ls -lha libcudnn*
 * run the following in order (as stated in the solution source)
 
 ```bash
+$ sudo rm libcudnn.so
 $ sudo rm libcudnn.so.7
 $ sudo ln libcudnn.so.7.6.3 libcudnn.so.7
 $ sudo ln libcudnn.so.7 libcudnn.so
